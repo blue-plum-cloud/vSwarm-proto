@@ -14,6 +14,7 @@ message Request {
   string require = 1;
   double lat = 2;
   double lon = 3;
+  bool isROI = 4;
 }
 
 message Result {

@@ -13,6 +13,7 @@ service Geo {
 message Request {
   float lat = 1;
   float lon = 2;
+  bool isROI = 3;
 }
 
 message Result {

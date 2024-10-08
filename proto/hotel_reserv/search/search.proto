@@ -16,6 +16,7 @@ message NearbyRequest {
   float lon = 2;
   string inDate = 3;
   string outDate = 4;
+  bool isROI = 5;
 }
 
 // TODO(hw): add city search endpoint

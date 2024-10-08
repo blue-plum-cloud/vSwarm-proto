@@ -33,7 +33,7 @@ service Aes {
 }
 
 // The plaintext message to be encrypted.
-message PlainTextMessage { string plaintext_message = 1; }
+message PlainTextMessage { string plaintext_message = 1;   bool isROI = 2; }
 
 // The response message containing the information about encrypted message
 // (runtime, plaintext, encrypted message)

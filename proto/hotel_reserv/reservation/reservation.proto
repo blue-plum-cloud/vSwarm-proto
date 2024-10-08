@@ -17,6 +17,7 @@ message Request {
   string inDate = 3;
   string outDate = 4;
   int32  roomNumber = 5;
+  bool isROI = 6;
 }
 
 message Result {

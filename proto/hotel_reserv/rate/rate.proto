@@ -13,6 +13,7 @@ message Request {
   repeated string hotelIds = 1;
   string inDate = 2;
   string outDate = 3;
+  bool isROI = 4;
 }
 
 message Result {
