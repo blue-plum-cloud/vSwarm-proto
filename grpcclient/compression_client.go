@@ -3,15 +3,16 @@ package grpcclient
 import (
 	"context"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/compression"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/compression"
 )
 
 type FileCompressGenerator struct {
 	GeneratorBase
 }
 
-func (g *FileCompressGenerator) Next() Input {
+func (g *FileCompressGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	return pkt
 }
 

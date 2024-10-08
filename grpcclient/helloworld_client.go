@@ -3,7 +3,7 @@ package grpcclient
 import (
 	"context"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/helloworld"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/helloworld"
 )
 
 // type HelloWorldGenerator struct {
@@ -33,8 +33,9 @@ type HelloWorldGenerator struct {
 	GeneratorBase
 }
 
-func (g *HelloWorldGenerator) Next() Input {
+func (g *HelloWorldGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "A unique message"

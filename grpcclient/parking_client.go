@@ -4,15 +4,16 @@ import (
 	"context"
 	"log"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/parking"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/parking"
 )
 
 type ParkingGenerator struct {
 	GeneratorBase
 }
 
-func (g *ParkingGenerator) Next() Input {
+func (g *ParkingGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "A unique message"

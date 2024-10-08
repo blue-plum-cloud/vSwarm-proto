@@ -4,7 +4,7 @@ import (
 	"context"
 	"math/rand"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/aes"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/aes"
 )
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -13,8 +13,9 @@ type AesGenerator struct {
 	GeneratorBase
 }
 
-func (g *AesGenerator) Next() Input {
+func (g *AesGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "A unique message"

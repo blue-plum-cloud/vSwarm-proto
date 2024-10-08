@@ -3,15 +3,16 @@ package grpcclient
 import (
 	"context"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/video_processing"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/video_processing"
 )
 
 type VideoProcessingGenerator struct {
 	GeneratorBase
 }
 
-func (g *VideoProcessingGenerator) Next() Input {
+func (g *VideoProcessingGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	return pkt
 }
 

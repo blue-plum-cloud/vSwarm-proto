@@ -7,13 +7,13 @@ import (
 	"strconv"
 	"strings"
 
-	geo "github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv/geo"
-	profile "github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv/profile"
-	rate "github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv/rate"
-	recommendation "github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv/recommendation"
-	reservation "github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv/reservation"
-	search "github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv/search"
-	user "github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv/user"
+	geo "github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv/geo"
+	profile "github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv/profile"
+	rate "github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv/rate"
+	recommendation "github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv/recommendation"
+	reservation "github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv/reservation"
+	search "github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv/search"
+	user "github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv/user"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -66,8 +66,9 @@ var hotelCoordinates = []string{
 	"37.7936,-122.3930",
 }
 
-func (g *HotelGeoGenerator) Next() Input {
+func (g *HotelGeoGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelCoordinates[0]
@@ -130,9 +131,10 @@ func randIds(n int) string {
 	return s
 }
 
-func (g *HotelProfileGenerator) Next() Input {
+func (g *HotelProfileGenerator) Next(isROI bool) Input {
 	// For profile we generate hotel ids between 1 and 80
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "1,2"
@@ -189,9 +191,10 @@ type HotelRateGenerator struct {
 	GeneratorBase
 }
 
-func (g *HotelRateGenerator) Next() Input {
+func (g *HotelRateGenerator) Next(isROI bool) Input {
 	// For profile we generate hotel ids between 1 and 80
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "1,2"
@@ -259,8 +262,9 @@ type HotelRecommendationGenerator struct {
 	GeneratorBase
 }
 
-func (g *HotelRecommendationGenerator) Next() Input {
+func (g *HotelRecommendationGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelCoordinates[0]
@@ -340,8 +344,9 @@ var hotelReservations = []string{
 	"tom,4", "jack,3", "user_100,18", "hi,13",
 }
 
-func (g *HotelReservationGenerator) Next() Input {
+func (g *HotelReservationGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelReservations[0]
@@ -403,8 +408,9 @@ var hotelUsers = []string{
 	"hello,hello2", "user_ads,pass_asdf", "user_23,pass_111", "user_233,pass_5",
 }
 
-func (g *HotelUserGenerator) Next() Input {
+func (g *HotelUserGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelUsers[0]
@@ -459,7 +465,8 @@ type HotelSearchGenerator struct {
 	GeneratorBase
 }
 
-func (g *HotelSearchGenerator) Next() Input {
+func (g *HotelSearchGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 

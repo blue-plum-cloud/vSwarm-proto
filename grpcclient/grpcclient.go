@@ -16,6 +16,7 @@ import (
 type Input struct {
 	Value  string
 	Method string
+	isROI  bool
 }
 
 type GeneratorType int64
@@ -32,7 +33,7 @@ type Generator interface {
 	SetUpperBound(ub int)
 	SetValue(value string)
 	SetMethod(method string)
-	Next() Input
+	Next(isROI bool) Input
 }
 
 type GeneratorBase struct {

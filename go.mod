@@ -1,21 +1,21 @@
-module github.com/vhive-serverless/vSwarm-proto
+module github.com/blue-plum-cloud/vSwarm-proto
 
 go 1.21
 
 toolchain go1.21.4
 
 replace (
-	github.com/vhive-serverless/vSwarm-proto/proto/aes => ./proto/aes
-	github.com/vhive-serverless/vSwarm-proto/proto/auth => ./proto/auth
-	github.com/vhive-serverless/vSwarm-proto/proto/compression => ./proto/compression
-	github.com/vhive-serverless/vSwarm-proto/proto/fibonacci => ./proto/fibonacci
-	github.com/vhive-serverless/vSwarm-proto/proto/helloworld => ./proto/helloworld
-	github.com/vhive-serverless/vSwarm-proto/proto/hipstershop => ./proto/hipstershop
-	github.com/vhive-serverless/vSwarm-proto/proto/hotel_reserv => ./proto/hotel_reserv
-	github.com/vhive-serverless/vSwarm-proto/proto/image_rotate => ./proto/image_rotate
-	github.com/vhive-serverless/vSwarm-proto/proto/video_processing => ./proto/video_processing
-	github.com/vhive-serverless/vSwarm-proto/proto/rnn_serving => ./proto/rnn_serving
-	github.com/vhive-serverless/vSwarm-proto/proto/video_analytics_standalone => ./proto/video_analytics_standalone
+	github.com/blue-plum-cloud/vSwarm-proto/proto/aes => ./proto/aes
+	github.com/blue-plum-cloud/vSwarm-proto/proto/auth => ./proto/auth
+	github.com/blue-plum-cloud/vSwarm-proto/proto/compression => ./proto/compression
+	github.com/blue-plum-cloud/vSwarm-proto/proto/fibonacci => ./proto/fibonacci
+	github.com/blue-plum-cloud/vSwarm-proto/proto/helloworld => ./proto/helloworld
+	github.com/blue-plum-cloud/vSwarm-proto/proto/hipstershop => ./proto/hipstershop
+	github.com/blue-plum-cloud/vSwarm-proto/proto/hotel_reserv => ./proto/hotel_reserv
+	github.com/blue-plum-cloud/vSwarm-proto/proto/image_rotate => ./proto/image_rotate
+	github.com/blue-plum-cloud/vSwarm-proto/proto/rnn_serving => ./proto/rnn_serving
+	github.com/blue-plum-cloud/vSwarm-proto/proto/video_analytics_standalone => ./proto/video_analytics_standalone
+	github.com/blue-plum-cloud/vSwarm-proto/proto/video_processing => ./proto/video_processing
 )
 
 require (

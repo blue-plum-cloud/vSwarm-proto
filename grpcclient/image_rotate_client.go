@@ -3,15 +3,16 @@ package grpcclient
 import (
 	"context"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/image_rotate"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/image_rotate"
 )
 
 type ImageRotateGenerator struct {
 	GeneratorBase
 }
 
-func (g *ImageRotateGenerator) Next() Input {
+func (g *ImageRotateGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	return pkt
 }
 

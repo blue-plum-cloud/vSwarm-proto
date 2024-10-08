@@ -3,15 +3,16 @@ package grpcclient
 import (
 	"context"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/video_analytics_standalone"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/video_analytics_standalone"
 )
 
 type VideoAnalyticsGenerator struct {
 	GeneratorBase
 }
 
-func (g *VideoAnalyticsGenerator) Next() Input {
+func (g *VideoAnalyticsGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 	return pkt
 }
 

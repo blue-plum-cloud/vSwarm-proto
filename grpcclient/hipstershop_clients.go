@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strconv"
 
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/hipstershop"
 	log "github.com/sirupsen/logrus"
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/hipstershop"
 )
 
 var (
@@ -100,7 +100,8 @@ type ShopAdServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopAdServiceGenerator) Next() Input {
+func (g *ShopAdServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -174,7 +175,8 @@ type ShopCartServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopCartServiceGenerator) Next() Input {
+func (g *ShopCartServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -225,7 +227,8 @@ type ShopCheckoutServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopCheckoutServiceGenerator) Next() Input {
+func (g *ShopCheckoutServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -291,7 +294,8 @@ type ShopCurrencyServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopCurrencyServiceGenerator) Next() Input {
+func (g *ShopCurrencyServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -339,7 +343,8 @@ type ShopEmailServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopEmailServiceGenerator) Next() Input {
+func (g *ShopEmailServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -389,7 +394,8 @@ type ShopPaymentServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopPaymentServiceGenerator) Next() Input {
+func (g *ShopPaymentServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -460,7 +466,8 @@ type ShopProductCatalogServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopProductCatalogServiceGenerator) Next() Input {
+func (g *ShopProductCatalogServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -505,7 +512,8 @@ type ShopRecommendationServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopRecommendationServiceGenerator) Next() Input {
+func (g *ShopRecommendationServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 
@@ -571,7 +579,8 @@ type ShopShippingServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopShippingServiceGenerator) Next() Input {
+func (g *ShopShippingServiceGenerator) Next(isROI bool) Input {
+	g.defaultInput.isROI = isROI
 	return g.defaultInput
 }
 

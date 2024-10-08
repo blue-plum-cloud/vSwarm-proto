@@ -6,14 +6,14 @@ import (
 	"strconv"
 	"strings"
 
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/rnn_serving"
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/rnn_serving"
 )
 
 type RNNServingGenerator struct {
 	GeneratorBase
 }
 
-func (g *RNNServingGenerator) Next() Input {
+func (g *RNNServingGenerator) Next(isROI bool) Input {
 
 	countries := []string{
 		"French", "Czech", "Dutch", "Polish", "Scottish", "Chinese",
@@ -22,13 +22,14 @@ func (g *RNNServingGenerator) Next() Input {
 	}
 
 	var pkt = g.defaultInput
+	pkt.isROI = isROI
 
 	switch g.GeneratorBase.generator {
 	case Unique:
 		country := "English"
 		numSamples := 1
 		pkt.Value = country + " " + strconv.Itoa(numSamples)
-	
+
 	case Random:
 		randomCountry := countries[rand.Intn(len(countries))]
 		var numSamples int

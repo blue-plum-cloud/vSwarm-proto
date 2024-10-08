@@ -2,15 +2,16 @@ package grpcclient
 
 import (
 	"context"
+
+	pb "github.com/blue-plum-cloud/vSwarm-proto/proto/gptj"
 	log "github.com/sirupsen/logrus"
-	pb "github.com/vhive-serverless/vSwarm-proto/proto/gptj"
 )
 
 type GptJGenerator struct {
 	GeneratorBase
 }
 
-func (g *GptJGenerator) Next() Input {
+func (g *GptJGenerator) Next(isROI bool) Input {
 	var pkt = g.defaultInput
 	switch g.GeneratorBase.generator {
 	case Unique:
@@ -20,6 +21,7 @@ func (g *GptJGenerator) Next() Input {
 	case Random:
 		pkt.Value = "true"
 	}
+	pkt.isROI = isROI
 	return pkt
 }
 
