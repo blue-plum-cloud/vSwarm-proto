@@ -35,7 +35,10 @@ message Cart {
     repeated CartItem items = 2;
 }
 
-message Empty {}
+message Empty {
+    bool isROI = 1;
+    int32 num_calls = 2;
+}
 
 // ---------------Recommendation service----------
 
