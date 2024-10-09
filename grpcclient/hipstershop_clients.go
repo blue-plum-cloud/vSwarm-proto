@@ -100,8 +100,9 @@ type ShopAdServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopAdServiceGenerator) Next(isROI bool) Input {
+func (g *ShopAdServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -175,8 +176,9 @@ type ShopCartServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopCartServiceGenerator) Next(isROI bool) Input {
+func (g *ShopCartServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -227,8 +229,9 @@ type ShopCheckoutServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopCheckoutServiceGenerator) Next(isROI bool) Input {
+func (g *ShopCheckoutServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -294,8 +297,9 @@ type ShopCurrencyServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopCurrencyServiceGenerator) Next(isROI bool) Input {
+func (g *ShopCurrencyServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -343,8 +347,9 @@ type ShopEmailServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopEmailServiceGenerator) Next(isROI bool) Input {
+func (g *ShopEmailServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -394,8 +399,9 @@ type ShopPaymentServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopPaymentServiceGenerator) Next(isROI bool) Input {
+func (g *ShopPaymentServiceGenerator) Next(isROI bool, numCalls it) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -466,8 +472,9 @@ type ShopProductCatalogServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopProductCatalogServiceGenerator) Next(isROI bool) Input {
+func (g *ShopProductCatalogServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -512,8 +519,9 @@ type ShopRecommendationServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopRecommendationServiceGenerator) Next(isROI bool) Input {
+func (g *ShopRecommendationServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 
@@ -579,8 +587,9 @@ type ShopShippingServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopShippingServiceGenerator) Next(isROI bool) Input {
+func (g *ShopShippingServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 

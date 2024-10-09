@@ -66,9 +66,10 @@ var hotelCoordinates = []string{
 	"37.7936,-122.3930",
 }
 
-func (g *HotelGeoGenerator) Next(isROI bool) Input {
+func (g *HotelGeoGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelCoordinates[0]
@@ -131,10 +132,11 @@ func randIds(n int) string {
 	return s
 }
 
-func (g *HotelProfileGenerator) Next(isROI bool) Input {
+func (g *HotelProfileGenerator) Next(isROI bool, numCalls int) Input {
 	// For profile we generate hotel ids between 1 and 80
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "1,2"
@@ -191,10 +193,11 @@ type HotelRateGenerator struct {
 	GeneratorBase
 }
 
-func (g *HotelRateGenerator) Next(isROI bool) Input {
+func (g *HotelRateGenerator) Next(isROI bool, numCalls int) Input {
 	// For profile we generate hotel ids between 1 and 80
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "1,2"
@@ -262,9 +265,10 @@ type HotelRecommendationGenerator struct {
 	GeneratorBase
 }
 
-func (g *HotelRecommendationGenerator) Next(isROI bool) Input {
+func (g *HotelRecommendationGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelCoordinates[0]
@@ -344,9 +348,10 @@ var hotelReservations = []string{
 	"tom,4", "jack,3", "user_100,18", "hi,13",
 }
 
-func (g *HotelReservationGenerator) Next(isROI bool) Input {
+func (g *HotelReservationGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelReservations[0]
@@ -408,9 +413,10 @@ var hotelUsers = []string{
 	"hello,hello2", "user_ads,pass_asdf", "user_23,pass_111", "user_233,pass_5",
 }
 
-func (g *HotelUserGenerator) Next(isROI bool) Input {
+func (g *HotelUserGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = hotelUsers[0]
@@ -465,8 +471,9 @@ type HotelSearchGenerator struct {
 	GeneratorBase
 }
 
-func (g *HotelSearchGenerator) Next(isROI bool) Input {
+func (g *HotelSearchGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
+	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
 }
 

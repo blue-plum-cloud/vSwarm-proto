@@ -10,9 +10,10 @@ type ImageRotateGenerator struct {
 	GeneratorBase
 }
 
-func (g *ImageRotateGenerator) Next(isROI bool) Input {
+func (g *ImageRotateGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	return pkt
 }
 

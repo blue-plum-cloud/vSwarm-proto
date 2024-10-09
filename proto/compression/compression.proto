@@ -35,6 +35,8 @@ service FileCompress {
 // The request message containing the user's name.
 message SendFile {
   string name = 1; 
+  bool isROI = 2;
+  int32 num_calls = 3;
 }
 
 // The response message containing the greetings

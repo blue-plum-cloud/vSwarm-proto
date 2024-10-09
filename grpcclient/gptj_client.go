@@ -11,8 +11,9 @@ type GptJGenerator struct {
 	GeneratorBase
 }
 
-func (g *GptJGenerator) Next(isROI bool) Input {
+func (g *GptJGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "false"

@@ -13,7 +13,7 @@ type RNNServingGenerator struct {
 	GeneratorBase
 }
 
-func (g *RNNServingGenerator) Next(isROI bool) Input {
+func (g *RNNServingGenerator) Next(isROI bool, numCalls int) Input {
 
 	countries := []string{
 		"French", "Czech", "Dutch", "Polish", "Scottish", "Chinese",
@@ -23,6 +23,7 @@ func (g *RNNServingGenerator) Next(isROI bool) Input {
 
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 
 	switch g.GeneratorBase.generator {
 	case Unique:

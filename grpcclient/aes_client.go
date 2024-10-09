@@ -13,9 +13,10 @@ type AesGenerator struct {
 	GeneratorBase
 }
 
-func (g *AesGenerator) Next(isROI bool) Input {
+func (g *AesGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 		pkt.Value = "A unique message"

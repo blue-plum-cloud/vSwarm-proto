@@ -78,10 +78,14 @@ message ListProductsResponse {
 
 message GetProductRequest {
     string id = 1;
+    bool isROI = 2;
+    int32 num_calls = 3;
 }
 
 message SearchProductsRequest {
     string query = 1;
+    bool isROI = 2;
+    int32 num_calls = 3;
 }
 
 message SearchProductsResponse {
@@ -98,6 +102,8 @@ service ShippingService {
 message GetQuoteRequest {
     Address address = 1;
     repeated CartItem items = 2;
+    bool isROI = 3;
+    int32 num_calls = 4;
 }
 
 message GetQuoteResponse {
@@ -107,6 +113,8 @@ message GetQuoteResponse {
 message ShipOrderRequest {
     Address address = 1;
     repeated CartItem items = 2;
+    bool isROI = 3;
+    int32 num_calls = 4;
 }
 
 message ShipOrderResponse {

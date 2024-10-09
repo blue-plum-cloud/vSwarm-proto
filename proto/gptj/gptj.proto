@@ -33,6 +33,8 @@ service GptJBenchmark {
 
 message GptJBenchmarkRequest {
   string regenerate = 1; // Calling this will rerun the benchmark if true, else just read from benchmark results on txt file
+  bool isROI = 2;
+  int32 num_calls = 3;
 }
 
 message GptJBenchmarkReply {

@@ -15,6 +15,7 @@ message Request {
   double lat = 2;
   double lon = 3;
   bool isROI = 4;
+  int32 num_calls = 5;
 }
 
 message Result {

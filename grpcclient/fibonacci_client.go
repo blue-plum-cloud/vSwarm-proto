@@ -12,9 +12,10 @@ type FibonacciGenerator struct {
 	GeneratorBase
 }
 
-func (g *FibonacciGenerator) Next(isROI bool) Input {
+func (g *FibonacciGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {
 	case Unique:
 

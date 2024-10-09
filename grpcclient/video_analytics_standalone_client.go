@@ -10,9 +10,10 @@ type VideoAnalyticsGenerator struct {
 	GeneratorBase
 }
 
-func (g *VideoAnalyticsGenerator) Next(isROI bool) Input {
+func (g *VideoAnalyticsGenerator) Next(isROI bool, numCalls int) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
+	pkt.NumCalls = numCalls
 	return pkt
 }
 

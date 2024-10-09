@@ -12,6 +12,7 @@ message Request {
   repeated string hotelIds = 1;
   string locale = 2;
   bool isROI = 3;
+  int32 num_calls = 4;
 }
 
 message Result {

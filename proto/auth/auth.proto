@@ -36,6 +36,7 @@ service Greeter {
 message HelloRequest {
   string name = 1;
   bool isROI = 2;
+  int32 num_calls = 3;
 }
 
 // The response message containing the greetings

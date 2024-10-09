@@ -14,6 +14,7 @@ message Request {
   string inDate = 2;
   string outDate = 3;
   bool isROI = 4;
+  int32 num_calls = 5;
 }
 
 message Result {
