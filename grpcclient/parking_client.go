@@ -11,7 +11,7 @@ type ParkingGenerator struct {
 	GeneratorBase
 }
 
-func (g *ParkingGenerator) Next(isROI bool, numCalls int) Input {
+func (g *ParkingGenerator) Next(isROI bool, numCalls int32) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
 	pkt.NumCalls = numCalls

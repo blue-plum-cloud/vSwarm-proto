@@ -11,7 +11,7 @@ type GptJGenerator struct {
 	GeneratorBase
 }
 
-func (g *GptJGenerator) Next(isROI bool, numCalls int) Input {
+func (g *GptJGenerator) Next(isROI bool, numCalls int32) Input {
 	var pkt = g.defaultInput
 	pkt.NumCalls = numCalls
 	switch g.GeneratorBase.generator {

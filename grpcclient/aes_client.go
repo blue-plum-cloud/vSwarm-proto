@@ -13,7 +13,7 @@ type AesGenerator struct {
 	GeneratorBase
 }
 
-func (g *AesGenerator) Next(isROI bool, numCalls int) Input {
+func (g *AesGenerator) Next(isROI bool, numCalls int32) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
 	pkt.NumCalls = numCalls

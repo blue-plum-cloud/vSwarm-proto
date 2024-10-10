@@ -33,7 +33,7 @@ type HelloWorldGenerator struct {
 	GeneratorBase
 }
 
-func (g *HelloWorldGenerator) Next(isROI bool, numCalls int) Input {
+func (g *HelloWorldGenerator) Next(isROI bool, numCalls int32) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
 	pkt.NumCalls = numCalls

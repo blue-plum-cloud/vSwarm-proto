@@ -13,7 +13,7 @@ type RNNServingGenerator struct {
 	GeneratorBase
 }
 
-func (g *RNNServingGenerator) Next(isROI bool, numCalls int) Input {
+func (g *RNNServingGenerator) Next(isROI bool, numCalls int32) Input {
 
 	countries := []string{
 		"French", "Czech", "Dutch", "Polish", "Scottish", "Chinese",

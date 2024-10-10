@@ -34,7 +34,7 @@ type Generator interface {
 	SetUpperBound(ub int)
 	SetValue(value string)
 	SetMethod(method string)
-	Next(isROI bool, numCalls int) Input
+	Next(isROI bool, numCalls int32) Input
 }
 
 type GeneratorBase struct {

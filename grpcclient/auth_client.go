@@ -13,7 +13,7 @@ type AuthGenerator struct {
 	GeneratorBase
 }
 
-func (g *AuthGenerator) Next(isROI bool, numCalls int) Input {
+func (g *AuthGenerator) Next(isROI bool, numCalls int32) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
 	pkt.NumCalls = numCalls

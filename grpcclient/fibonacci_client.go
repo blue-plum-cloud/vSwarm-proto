@@ -12,7 +12,7 @@ type FibonacciGenerator struct {
 	GeneratorBase
 }
 
-func (g *FibonacciGenerator) Next(isROI bool, numCalls int) Input {
+func (g *FibonacciGenerator) Next(isROI bool, numCalls int32) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
 	pkt.NumCalls = numCalls

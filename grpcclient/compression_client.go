@@ -10,7 +10,7 @@ type FileCompressGenerator struct {
 	GeneratorBase
 }
 
-func (g *FileCompressGenerator) Next(isROI bool, numCalls int) Input {
+func (g *FileCompressGenerator) Next(isROI bool, numCalls int32) Input {
 	var pkt = g.defaultInput
 	pkt.isROI = isROI
 	pkt.NumCalls = numCalls
