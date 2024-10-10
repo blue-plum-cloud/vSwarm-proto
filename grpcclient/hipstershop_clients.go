@@ -399,7 +399,7 @@ type ShopPaymentServiceGenerator struct {
 	GeneratorBase
 }
 
-func (g *ShopPaymentServiceGenerator) Next(isROI bool, numCalls it) Input {
+func (g *ShopPaymentServiceGenerator) Next(isROI bool, numCalls int) Input {
 	g.defaultInput.isROI = isROI
 	g.defaultInput.NumCalls = numCalls
 	return g.defaultInput
