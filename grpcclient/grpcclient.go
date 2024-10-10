@@ -17,7 +17,7 @@ type Input struct {
 	Value    string
 	Method   string
 	isROI    bool
-	NumCalls int
+	NumCalls int32
 }
 
 type GeneratorType int64
